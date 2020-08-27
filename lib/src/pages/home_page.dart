@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:productosgmdpto/src/bloc/proveedor.dart';
 import 'package:productosgmdpto/src/models/producto_model.dart';
 
-
 class HomePage extends StatelessWidget {
   // final productoProvider = new ProductosProvider();
 
@@ -31,8 +30,8 @@ class HomePage extends StatelessWidget {
 
           return ListView.builder(
             itemCount: productosGMD.length,
-            itemBuilder: (context, indice) =>
-                _crearItemProductosGMD(context, productosBloc, productosGMD[indice]),
+            itemBuilder: (context, indice) => _crearItemProductosGMD(
+                context, productosBloc, productosGMD[indice]),
           );
         } else {
           return Center(child: CircularProgressIndicator());
@@ -41,7 +40,8 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Widget _crearItemProductosGMD(BuildContext context, ProductosBloc productosBloc, ProductoModel producto) {
+  Widget _crearItemProductosGMD(BuildContext context,
+      ProductosBloc productosBloc, ProductoModel producto) {
     return Dismissible(
         key: UniqueKey(),
         background: Container(
@@ -53,7 +53,8 @@ class HomePage extends StatelessWidget {
          
         },
         */
-        onDismissed: (direccion)=>productosBloc.eliminarProductos(producto.id),
+        onDismissed: (direccion) =>
+            productosBloc.eliminarProductos(producto.id),
         child: Card(
           child: Column(
             children: <Widget>[
@@ -79,10 +80,14 @@ class HomePage extends StatelessWidget {
   }
 
   _crearBoton(BuildContext context) {
+    final productoBloc = Proveedor.productosBloc(context);
+    productoBloc.cargarProductos();
     return FloatingActionButton(
-      child: Icon(Icons.add),
+      child: Icon(Icons.assistant),
       backgroundColor: Colors.orangeAccent,
-      onPressed: () => Navigator.pushNamed(context, 'producto'),
+      // _creaListadoProductosGMD(productoBloc),
+      onPressed: () => (productoBloc.cargarProductos()),
+      //  onPressed: () => Navigator.pushNamed(context, 'producto'),
     );
   }
 }
