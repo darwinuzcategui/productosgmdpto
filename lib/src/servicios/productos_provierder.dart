@@ -25,6 +25,8 @@ class ProductosProvider {
     final resp = await http.post(url,
         headers: {'token': _prefs.token},
         body: productoModelToJson(productogmd));
+    //  productoModelToJson
+    // productoModelFromJson
 
     print("------------------------------");
     print(productogmd.toJson());
@@ -39,13 +41,22 @@ class ProductosProvider {
 
   // modificar o editar productos
   Future<bool> editarProductoGMD(ProductoModel productogmd) async {
-    final url = '$_url/productos/${productogmd.id}.json?auth=${_prefs.token}';
+    final url = '$_url/productos/${productogmd.id}';
 
-    final resp = await http.put(url, body: productoModelToJson(productogmd));
+    final resp = await http.put(url, headers: {
+      'token': _prefs.token
+    }, body: {
+      'nombre': productogmd.nombre,
+      'precioBss': productogmd.precioBss.toString(),
+      'precioDolares': productogmd.precioDolares.toString(),
+      'unidadm': productogmd.unidadm,
+      'disponible': productogmd.disponible.toString()
+    });
 
     final decodedData = json.decode(resp.body);
 
     print(decodedData);
+    print(resp);
 
     return true;
   }

@@ -200,15 +200,19 @@ class _ProductoPagState extends State<ProductoPag> {
       producto.fotoUrl = await productosBloc.subirFoto(foto);
     }
 
-    print("*******************************-- aqui -- ************************");
-    productosBloc.agregarProductos(producto);
-
     if (producto.id == null) {
       print(
-          "*******************************-- aqui -- ************************");
+          "*******************************-- Agregar -- ************************");
       productosBloc.agregarProductos(producto);
     } else {
+      print(
+          "*******************************-- editar -- ************************");
+      print(productosBloc);
+      print(producto.id);
+      print(producto.precioBss);
       productosBloc.editarProductos(producto);
+      print(
+          "*******************************-fin--- editar -- ************************");
     }
 
     // setState(() { _salvando = false; });

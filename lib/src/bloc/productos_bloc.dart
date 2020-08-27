@@ -44,6 +44,7 @@ class ProductosBloc {
     _cargandoController.sink.add(true);
     await _productoProvider.editarProductoGMD(producto);
     _cargandoController.sink.add(false);
+    cargarProductos();
   }
 
   void eliminarProductos(String id) async {
