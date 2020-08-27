@@ -2,8 +2,8 @@ import 'dart:io';
 
 import 'package:rxdart/rxdart.dart';
 
-import 'package:productosgmd/src/servicios/productos_provierder.dart';
-import 'package:productosgmd/src/models/producto_model.dart';
+import 'package:productosgmdpto/src/servicios/productos_provierder.dart';
+import 'package:productosgmdpto/src/models/producto_model.dart';
 
 class ProductosBloc {
   final _productosController = new BehaviorSubject<List<ProductoModel>>();

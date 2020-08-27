@@ -6,8 +6,8 @@ import 'dart:io';
 import 'package:http/http.dart' as http;
 import 'package:http_parser/http_parser.dart';
 import 'package:mime_type/mime_type.dart';
-import 'package:productosgmd/src/models/producto_model.dart';
-import 'package:productosgmd/src/preferencias_usuarios/preferencia_usuarios.dart';
+import 'package:productosgmdpto/src/models/producto_model.dart';
+import 'package:productosgmdpto/src/preferencias_usuarios/preferencia_usuarios.dart';
 
 class ProductosProvider {
   final String _url = 'https://stark-crag-88093.herokuapp.com';

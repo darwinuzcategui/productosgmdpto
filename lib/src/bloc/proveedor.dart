@@ -1,10 +1,10 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:productosgmd/src/bloc/login_bloc.dart';
-export 'package:productosgmd/src/bloc/login_bloc.dart';
+import 'package:productosgmdpto/src/bloc/login_bloc.dart';
+export 'package:productosgmdpto/src/bloc/login_bloc.dart';
 
-import 'package:productosgmd/src/bloc/productos_bloc.dart';
-export 'package:productosgmd/src/bloc/productos_bloc.dart';
+import 'package:productosgmdpto/src/bloc/productos_bloc.dart';
+export 'package:productosgmdpto/src/bloc/productos_bloc.dart';
 
 class Proveedor extends InheritedWidget {
 

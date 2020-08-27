@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:productosgmd/src/bloc/proveedor.dart';
-import 'package:productosgmd/src/servicios/usuarios_provierder.dart';
-import 'package:productosgmd/src/utils/utilis.dart';
+import 'package:productosgmdpto/src/bloc/proveedor.dart';
+import 'package:productosgmdpto/src/servicios/usuarios_provierder.dart';
+import 'package:productosgmdpto/src/utils/utilis.dart';
 
 class RegistroPage extends StatelessWidget {
   final usuarioProvider = new UsuarioProvider();

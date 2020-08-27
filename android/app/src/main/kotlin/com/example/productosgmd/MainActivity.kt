@@ -1,4 +1,4 @@
-package com.example.productosgmd
+package com.example.productosgmdpto
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -2,10 +2,10 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:productosgmd/src/bloc/proveedor.dart';
-import 'package:productosgmd/src/models/producto_model.dart';
-// import 'package:productosgmd/src/servicios/productos_provierder.dart';
-import 'package:productosgmd/src/utils/utilis.dart' as utils;
+import 'package:productosgmdpto/src/bloc/proveedor.dart';
+import 'package:productosgmdpto/src/models/producto_model.dart';
+// import 'package:productosgmdpto/src/servicios/productos_provierder.dart';
+import 'package:productosgmdpto/src/utils/utilis.dart' as utils;
 
 class ProductoPag extends StatefulWidget {
   @override

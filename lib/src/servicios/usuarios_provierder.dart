@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
-import 'package:productosgmd/src/preferencias_usuarios/preferencia_usuarios.dart';
+import 'package:productosgmdpto/src/preferencias_usuarios/preferencia_usuarios.dart';
 
 class UsuarioProvider {
   final String _firebaseToken = 'AIzaSyCb1isBaJLuYdHSSdLHEw8k39ser-_k9RY';

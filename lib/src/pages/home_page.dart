@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:productosgmd/src/bloc/proveedor.dart';
-// import 'package:productosgmd/src/bloc/proveedor.dart';
-import 'package:productosgmd/src/models/producto_model.dart';
-// import 'package:productosgmd/src/servicios/productos_provierder.dart';
+import 'package:productosgmdpto/src/bloc/proveedor.dart';
+import 'package:productosgmdpto/src/models/producto_model.dart';
+
 
 class HomePage extends StatelessWidget {
   // final productoProvider = new ProductosProvider();
