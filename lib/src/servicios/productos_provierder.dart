@@ -50,6 +50,7 @@ class ProductosProvider {
       'precioBss': productogmd.precioBss.toString(),
       'precioDolares': productogmd.precioDolares.toString(),
       'unidadm': productogmd.unidadm,
+      'fotoUrl': productogmd.fotoUrl,
       'disponible': productogmd.disponible.toString()
     });
 
@@ -105,9 +106,9 @@ class ProductosProvider {
   // crear el metodo para borrar ApiGMD
 
   Future<int> borrarProductoDeApiGMD(String id) async {
-    final url = '$_url/productos/$id.json?auth=${_prefs.token}';
+    final url = '$_url/productos/$id';
 
-    final resp = await http.delete(url);
+    final resp = await http.delete(url, headers: {'token': _prefs.token});
 
     print(resp.body);
 

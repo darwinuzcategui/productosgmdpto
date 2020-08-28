@@ -210,6 +210,7 @@ class _ProductoPagState extends State<ProductoPag> {
       print(productosBloc);
       print(producto.id);
       print(producto.precioBss);
+      print(producto.fotoUrl);
       productosBloc.editarProductos(producto);
       print(
           "*******************************-fin--- editar -- ************************");
@@ -230,6 +231,8 @@ class _ProductoPagState extends State<ProductoPag> {
   }
 
   Widget _mostrarFoto() {
+    print("***********mostar foto***************");
+    print(producto.fotoUrl);
     if (producto.fotoUrl != null) {
       return FadeInImage(
         placeholder: AssetImage('assets/cargando.gif'),

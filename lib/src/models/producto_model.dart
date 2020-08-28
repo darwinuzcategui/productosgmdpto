@@ -29,7 +29,7 @@ class ProductoModel {
     this.precioDolares = 100.0,
     this.precioBss = 100.0,
     this.disponible = true,
-    this.fotoUrl = '',
+    this.fotoUrl,
     this.grupo = '5edd11f76c3b140017ee64e3',
     this.marca = '5edd120d6c3b140017ee64e4',
   });
