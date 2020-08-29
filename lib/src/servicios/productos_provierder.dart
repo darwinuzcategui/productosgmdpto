@@ -66,15 +66,6 @@ class ProductosProvider {
   Future<List<ProductoModel>> cargarProductosDesdeApiGMD() async {
     final url = '$_url/productos?limite=0&desde=0';
 
-    Map<dynamic, dynamic> userHeader = {
-      "Content-type": "application/json",
-      "Accept": "application/json",
-      "token": {_prefs.token}
-    };
-
-    //headers:userHeader
-    //   final resp = await http.post('https://stark-crag-88093.herokuapp.com/login',
-    //     headers: {'token': $_prefs.token});
     final resp = await http.get(url, headers: {'token': _prefs.token});
 
     final Map<String, dynamic> decodificaData = json.decode(resp.body);
@@ -146,5 +137,39 @@ class ProductosProvider {
     print(respData);
 
     return respData['secure_url'];
+  }
+
+  // buscar
+  // listado de productos desde ApiGMD
+
+  Future<List<ProductoModel>> buscarProductos(String termino) async {
+    final url = '$_url/productos/buscar/$termino';
+
+    final resp = await http.get(url, headers: {'token': _prefs.token});
+
+    final Map<String, dynamic> decodificaData = json.decode(resp.body);
+
+    final List<ProductoModel> productos = new List();
+
+    // print("****************datos de productos************");
+
+    // print(decodificaData['productos']);
+
+    // print("****************final datos de productos************");
+    if (decodificaData == null) return [];
+
+    if (decodificaData['error'] != null) return [];
+
+    decodificaData['producto'].forEach((listaproductos) {
+      final prodTemp = ProductoModel.fromJson(listaproductos);
+
+      productos.add(prodTemp);
+      print("-----------------************************-----------------------");
+      print(prodTemp);
+      print(prodTemp.nombre);
+      print("----------------*********fin***************");
+    });
+
+    return productos;
   }
 }

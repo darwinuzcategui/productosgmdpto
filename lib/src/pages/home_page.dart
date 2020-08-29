@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:productosgmdpto/src/bloc/proveedor.dart';
+import 'package:productosgmdpto/src/buscar/buscar_clase_delegada.dart';
 import 'package:productosgmdpto/src/models/producto_model.dart';
 
 class HomePage extends StatelessWidget {
@@ -14,7 +15,20 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Lista de Productos GMD'),
-      ),
+        // backgroundColor: Colors.indigoAccent,
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(Icons.search),
+              onPressed: () {
+                showSearch(
+                  context: context,
+                  delegate: BuscarDatos(),
+                  // query: 'Hola'
+                );
+              },
+            )
+          ],
+       ),
       body: _creaListadoProductosGMD(productoBloc),
       floatingActionButton: _crearBoton(context),
     );
