@@ -64,7 +64,8 @@ class ProductosProvider {
 
   // listado de productos desde ApiGMD
   Future<List<ProductoModel>> cargarProductosDesdeApiGMD() async {
-    final url = '$_url/productos?limite=0&desde=0';
+    final url = '$_url/productosEmpresa?limite=0&desde=0';
+    //  final url = '$_url/productos?limite=0&desde=0';
 
     final resp = await http.get(url, headers: {'token': _prefs.token});
 
